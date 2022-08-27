@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "description": "Play five brain-games related to math operations",
   "main": "index.js",
