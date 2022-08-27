@@ -2,6 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
+  "bin": { "brain-games" : "bin/brain-games.js" },
   "description": "Play five brain-games related to math operations",
   "main": "index.js",
   "scripts": {
