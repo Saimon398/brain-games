@@ -6,3 +6,5 @@ publish:
 	npm publish --dry-run # Имитирует публикацию приложения в NPM-пакет
 link:
 	npm link
+lint:
+	npx eslint .
