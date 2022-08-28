@@ -9,8 +9,8 @@ export const generateProgression = () => {
   const sequence = [];
   const indexOfMissingNumber = generateRandomNumber() % 10;
   let start = generateRandomNumber() % 10;
-  let sequenceLength = 10;
-  while (sequenceLength > 0) {
+  let sequenceLength = 9;
+  while (sequenceLength >= 0) {
     if (indexOfMissingNumber === sequenceLength) {
       sequence.push('..');
     } else {
