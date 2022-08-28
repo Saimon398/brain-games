@@ -28,7 +28,6 @@ export const getMathExpression = () => {
   return `${firstOperand} ${operator} ${secondOperand}`;
 };
 
-
 /**
  * @description find result of expression according to the math operation
  * @param {String} operation math operation
@@ -38,16 +37,21 @@ export const getMathExpression = () => {
  */
 export const calcExpression = (expression) => {
   const [firstOperand, operator, secondOperand] = expression.split(' ');
+  let result;
   switch (operator) {
     case '+':
-      return +firstOperand + +secondOperand;
+      result = Number(firstOperand) + Number(secondOperand);
+      break;
     case '-':
-      return firstOperand - secondOperand;
+      result = firstOperand - secondOperand;
+      break;
     case '*':
-      return firstOperand * secondOperand;
+      result = firstOperand * secondOperand;
+      break;
     default:
-      throw new Error ('There is no such type of math operation!');
+      throw new Error('There is no such type of math operation!');
   }
+  return result.toString();
 };
 
 export const condition = 'What is the result of the expression?.';
