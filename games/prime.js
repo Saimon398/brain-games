@@ -1,7 +1,7 @@
 /**
  * @description defines if the number is prime
  * @param {Number} number number to be defined
- * @returns {Boolean} 
+ * @returns {Boolean}
  */
 export const isPrime = (number) => {
   let divisor = 2;
