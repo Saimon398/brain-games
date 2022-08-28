@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import startGame from '../src/even.js';
+import startGame from '../src/index.js';
+import { isEven, condition } from '../games/even.js';
+import generateRandomNumber from '../src/random.js';
 
-startGame();
+startGame(generateRandomNumber, isEven, condition);
