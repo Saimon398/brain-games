@@ -35,7 +35,8 @@ export const searchMissingNumber = (progression) => {
       missingItem = (Number(splitedProgression[i - 1]) + Number(splitedProgression[i + 1])) / 2;
       break;
     } else if (splitedProgression[i] === '..' && i === 0) {
-      missingItem = splitedProgression[i + 2] - splitedProgression[i - 1];
+      missingItem = splitedProgression[i + 1]
+      - (splitedProgression[i + 2] - splitedProgression[i + 1]);
       break;
     } else if (splitedProgression[i] === '..' && i === 9) {
       missingItem = Number(splitedProgression[i - 1])
