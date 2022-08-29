@@ -14,7 +14,7 @@ export default (generateQuestion, getCorrectAnswer, condition) => {
       console.log('Correct!');
     } else {
       console.log(`'${currentUserAnswer}' is wrong answer ;(. Correct answer was '${getCorrectAnswer(currentQuestion)}')`);
-      console.log(`Let's try again, ${playerName}`);
+      console.log(`Let's try again, ${playerName}!`);
       return;
     }
   }
