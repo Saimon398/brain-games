@@ -6,7 +6,7 @@
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
     "brain-calc": "bin/brain-calc.js",
-    "brain-gcd" : "bin/brain-gcd.js",
+    "brain-gcd": "bin/brain-gcd.js",
     "brain-prime": "bin/brain-prime.js",
     "brain-progression": "bin/brain-progression.js"
   },
@@ -38,6 +38,7 @@
   "devDependencies": {
     "eslint": "^8.23.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^29.0.1"
   }
 }

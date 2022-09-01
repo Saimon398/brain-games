@@ -8,3 +8,5 @@ link:
 	npm link
 lint:
 	npx eslint .
+test:
+	npx jest . # Запускает тестирование
