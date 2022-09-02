@@ -5,7 +5,7 @@
  */
 export const isPrime = (number) => {
   let divisor = 2;
-  let flag = number === 1 ? false : true;
+  let flag = number !== 1;
   while (divisor <= Math.sqrt(Math.abs(number))) {
     if (number % divisor === 0) {
       flag = false;
