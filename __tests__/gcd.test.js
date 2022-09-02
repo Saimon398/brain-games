@@ -1,3 +1,4 @@
+import { test, expect, describe } from '@jest/globals';
 import { gcd } from '../games/gcd.js';
 
 describe.each([

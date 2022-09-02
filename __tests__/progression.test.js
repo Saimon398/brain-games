@@ -1,3 +1,4 @@
+import { test, expect, describe } from '@jest/globals';
 import { searchMissingNumber } from '../games/progression.js';
 
 describe.each([

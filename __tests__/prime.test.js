@@ -1,3 +1,4 @@
+import { test, expect, describe } from '@jest/globals';
 import { sayIsPrime } from '../games/prime.js';
 
 describe.each([
