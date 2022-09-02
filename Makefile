@@ -9,4 +9,4 @@ link:
 lint:
 	npx eslint .
 test:
-	npx jest . # Запускает тестирование
+	NODE_OPTIONS=--experimental-vm-modules npx jest . # Запускает тестирование

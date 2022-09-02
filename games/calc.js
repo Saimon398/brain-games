@@ -1,4 +1,4 @@
-import generateRandomNumber from '../src/random.js';
+import { generateRandomNumber } from '../src/utils.js';
 
 /**
  * @description generate math operator randomly ('+', '-', '*')
@@ -51,7 +51,7 @@ export const calcExpression = (expression) => {
     default:
       throw new Error('There is no such type of math operation!');
   }
-  return result.toString();
+  return result;
 };
 
 export const condition = 'What is the result of the expression?.';

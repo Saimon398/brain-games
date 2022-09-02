@@ -1,4 +1,4 @@
-import generateRandomNumber from '../src/random.js';
+import { generateRandomNumber } from '../src/utils.js';
 
 /**
  * @description generates 2 random numbers
@@ -22,7 +22,7 @@ export const gcd = (numbers) => {
   while (firstNumber % divisor !== 0 || secondNumber % divisor !== 0) {
     divisor -= 1;
   }
-  return divisor.toString();
+  return divisor;
 };
 
 export const condition = 'Find the greatest common divisor of given numbers.';

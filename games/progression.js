@@ -1,4 +1,4 @@
-import generateRandomNumber from '../src/random.js';
+import { generateRandomNumber } from '../src/utils.js';
 
 /**
  * @description generate arithmetical progression with one missing item
@@ -25,7 +25,7 @@ export const generateProgression = () => {
 /**
  * @description searches missing number in progression
  * @param {String} progression arithmetical progression
- * @returns {String} missing number
+ * @returns {Number} missing number
  */
 export const searchMissingNumber = (progression) => {
   const splitedProgression = progression.split(' ');
@@ -40,11 +40,11 @@ export const searchMissingNumber = (progression) => {
       break;
     } else if (splitedProgression[i] === '..' && i === 9) {
       missingItem = Number(splitedProgression[i - 1])
-      + (splitedProgression[i - 1] - splitedProgression[i - 2]);
+      + Number((splitedProgression[i - 1] - splitedProgression[i - 2]));
       break;
     }
   }
-  return missingItem.toString();
+  return missingItem;
 };
 
 export const condition = 'What number is missing in the progression?';

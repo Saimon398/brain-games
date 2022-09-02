@@ -6,14 +6,16 @@
 export const isPrime = (number) => {
   let divisor = 2;
   let flag = true;
-  while (divisor <= Math.sqrt(number)) {
+  while (divisor <= Math.sqrt(Math.abs(number))) {
     if (number % divisor === 0) {
       flag = false;
       break;
     }
     divisor += 1;
   }
-  return flag ? 'yes' : 'no';
+  return flag;
 };
+
+export const sayIsPrime = (number) => (isPrime(number) ? 'yes' : 'no');
 
 export const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
