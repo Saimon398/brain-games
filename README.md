@@ -17,7 +17,7 @@ These games are intended to make you play five short cli-games. **They will not 
 
 ### Run Tests
 
-    make tests
+    make test
 
 ### Lint
 
