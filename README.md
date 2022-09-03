@@ -7,9 +7,21 @@
 
 These games are intended to make you play five short cli-games. **They will not seem to you challenging**, because tasks you will need to pass through are quite simple. However, there is no doubt that **they will definitely make your time more exciting**.
 
+### Requirements
+
+- Mac / Linux
+
 ### Installation
 
     npm install brain-games
+
+### Run Tests
+
+    make tests
+
+### Lint
+
+    make lint
 
 ### How To Play
 
@@ -44,3 +56,5 @@ There are links to the asccinema records demonstrating different game processes 
 | brain-prime       | https://asciinema.org/a/NOQMmdmlBL1Y8RkX2G8nOca72 |
 | brain-gcd         | https://asciinema.org/a/lm41mRlLjdzn9LlY76uinCUIb |
 | brain-progression | https://asciinema.org/a/wWntl1Cdm0U8vlI7SfBwFRi9R |
+
+ENJOY YOUR GAME :)
