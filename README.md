@@ -4,8 +4,7 @@
 
 [![Actions Status](https://github.com/Saimon398/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Saimon398/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/df1b2ce4fe65f580c926/maintainability)](https://codeclimate.com/github/Saimon398/brain-games/maintainability)
-[![Package Check](https://github.com/Saimon398/frontend-project-lvl1/workflows/package-check/badge.svg)](https://github.com/Saimon398/frontend-project-lvl1/actions/workflows/project-check.yml)
-![Package Check](https://github.com/Saimon398/frontend-project-lvl1/workflows/package-check/badge.svg)](https://github.com/Saimon398/frontend-project-lvl1/actions/workflows/project-check.yml)
+[![Package Check](https://github.com/Saimon398/frontend-project-lvl1/workflows/package-check/badge.svg?event=push)](https://github.com/Saimon398/frontend-project-lvl1/actions/workflows/package-check.yml)
 
 These games are intended to make you play five short cli-games. **They will not seem to you challenging**, because tasks you will need to pass through are quite simple. However, there is no doubt that **they will definitely make your time more exciting**.
 
