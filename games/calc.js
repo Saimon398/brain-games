@@ -43,7 +43,7 @@ const buildMathExpression = (maxValue) => {
  * calcExpression('10 - 4'); // => 6
  * calcExpression('50 + 25'); // => 75
  */
-const calcExpression = (expression) => {
+export const calcExpression = (expression) => {
   const [leftValue, operator, rightValue] = expression.split(' ');
   const calculate = MATH_OPERATIONS[operator];
   const result = calculate(leftValue, rightValue);

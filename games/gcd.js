@@ -29,7 +29,7 @@ const buildExpression = ([num1, num2]) => `${num1} ${num2}`;
  * @example
  * calculateGCD([36, 9]); // => 4
  */
-const calculateGCD = (values) => {
+export const calculateGCD = (values) => {
   const [left, right] = values;
   let divisor = left > right ? left : right;
 

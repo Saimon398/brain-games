@@ -18,7 +18,7 @@ const isEven = (number) => (number % 2 === 0);
  * sayIsEven(4); // => 'yes'
  * sayIsEven(7); // => 'no'
  */
-const sayIsEven = (value) => (isEven(value) ? 'yes' : 'no');
+export const sayIsEven = (value) => (isEven(value) ? 'yes' : 'no');
 
 export default () => {
   const question = generateRandomNumber(100);

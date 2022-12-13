@@ -31,7 +31,7 @@ const isPrime = (value) => {
  * isPrime(7); // => "yes"
  * isPrime(10); // => "no"
  */
-const sayIsPrime = (value) => (isPrime(value) ? 'yes' : 'no');
+export const sayIsPrime = (value) => (isPrime(value) ? 'yes' : 'no');
 
 export default () => {
   const question = generateRandomNumber(100);
