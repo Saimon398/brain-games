@@ -1,6 +1,5 @@
 import readlineSync from 'readline-sync';
 import sayGreetings from './cli.js';
-import { stringify } from './utils.js';
 
 /**
  * @description Main logic for game

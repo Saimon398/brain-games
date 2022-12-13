@@ -1,4 +1,4 @@
-import { generateRandomNumber } from '../src/utils.js';
+import { generateRandomNumber, stringify } from '../src/utils.js';
 
 const MATH_OPERATIONS = {
   '+': (num1, num2) => Number(num1) + Number(num2),
@@ -46,7 +46,8 @@ const buildMathExpression = (maxValue) => {
 const calcExpression = (expression) => {
   const [leftValue, operator, rightValue] = expression.split(' ');
   const calculate = MATH_OPERATIONS[operator];
-  return calculate(leftValue, rightValue);
+  const result = calculate(leftValue, rightValue);
+  return stringify(result);
 };
 
 export default () => {
