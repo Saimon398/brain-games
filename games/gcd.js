@@ -1,4 +1,4 @@
-import { generateRandomNumber } from '../src/utils.js';
+import { generateRandomNumber, stringify } from '../src/utils.js';
 
 /**
  * @description Returns two random values
@@ -37,7 +37,7 @@ const calculateGCD = (values) => {
     divisor -= 1;
   }
 
-  return divisor;
+  return stringify(divisor);
 };
 
 export default () => {

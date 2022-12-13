@@ -11,7 +11,7 @@ import { generateRandomNumber } from '../src/utils.js';
 const isPrime = (value) => {
   let divisor = 2;
   const limit = Math.sqrt(Math.abs(value));
-  let flag = number !== 1;
+  let flag = value !== 1;
 
   while (divisor <= limit) {
     if (value % divisor === 0) {

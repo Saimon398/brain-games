@@ -1,4 +1,4 @@
-import { generateRandomNumber } from '../src/utils.js';
+import { generateRandomNumber, stringify } from '../src/utils.js';
 
 /**
  * @description Returns data: progression and missing item
@@ -34,6 +34,6 @@ export default () => {
   const { progression, missingItem } = generateProgressionData();
   return {
     question: progression,
-    answer: missingItem,
+    answer: stringify(missingItem),
   };
 };
