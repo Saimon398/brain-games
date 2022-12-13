@@ -2,7 +2,6 @@
 
 ## Games that make you warm-up your brain
 
-[![Actions Status](https://github.com/Saimon398/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Saimon398/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/df1b2ce4fe65f580c926/maintainability)](https://codeclimate.com/github/Saimon398/brain-games/maintainability)
 [![Package Check](https://github.com/Saimon398/frontend-project-lvl1/workflows/project-check/badge.svg?event=push)](https://github.com/Saimon398/frontend-project-lvl1/actions/workflows/package-check.yml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/df1b2ce4fe65f580c926/test_coverage)](https://codeclimate.com/github/Saimon398/brain-games/test_coverage)
