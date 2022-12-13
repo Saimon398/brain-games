@@ -1,20 +1,31 @@
+import { generateRandomNumber } from '../src/utils.js';
+
 /**
- * @description defines if the random number is even
- * @param {Number} number number parity of which to be defined
+ * @description Checks if the random number is even
+ * @param {Number} number Value parity of which to be defined
  * @returns {Boolean}
+ * @example
+ * isEven(4); // => true
+ * isEven(7); // => false
  */
 const isEven = (number) => (number % 2 === 0);
 
 /**
- * @description says if the random number is even
- * @param {Number} number number parity of which to be defined
- * @returns {String} result
+ * @description Says if the value is even
+ * @param {Number} value Value parity of which to be defined
+ * @returns {String}
+ * @example
+ * sayIsEven(4); // => 'yes'
+ * sayIsEven(7); // => 'no'
  */
-export const sayIsEven = (number) => {
-  if (typeof number !== 'number') {
-    return 'no';
-  }
-  return isEven(number) ? 'yes' : 'no';
-};
+const sayIsEven = (value) => (isEven(value) ? 'yes' : 'no');
 
-export const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
+export default () => {
+  const question = generateRandomNumber(100);
+  const answer = sayIsEven(question);
+
+  return {
+    question,
+    answer,
+  };
+};

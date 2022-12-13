@@ -1,28 +1,52 @@
 import { generateRandomNumber } from '../src/utils.js';
 
 /**
- * @description generates 2 random numbers
- * @returns {String}
+ * @description Returns two random values
+ * @returns {Array []}
+ * @example
+ * generateTwoRandomValues(50); // => [21, 43]
+ * generateTwoRandomValues(70); // => [31, 67]
  */
-export const getNumbers = () => {
-  const firstNumber = generateRandomNumber();
-  const secondNumber = generateRandomNumber();
-  return `${firstNumber} ${secondNumber}`;
+const generateTwoRandomValues = (maxValue) => {
+  const num1 = generateRandomNumber(maxValue);
+  const num2 = generateRandomNumber(maxValue);
+  return [num1, num2];
 };
 
 /**
- * @description find greatest common divisor of 2 numbers
- * @param {Number} firstNumber first number
- * @param {Number} secondNumber second number
- * @returns {Number} greatest common divisor
+ * @description Return expression with 2 random values
+ * @param {Array []} nums Nums to be included in expression
+ * @returns {String}
+ * @example
+ * buildExpression([36, 9]); // => "36 9"
  */
-export const gcd = (numbers) => {
-  const [firstNumber, secondNumber] = numbers.split(' ');
-  let divisor = firstNumber > secondNumber ? firstNumber : secondNumber;
-  while (firstNumber % divisor !== 0 || secondNumber % divisor !== 0) {
+const buildExpression = ([num1, num2]) => `${num1} ${num2}`;
+
+/**
+ * @description Return greatest common divisor of values
+ * @param {Array []} values Values GCD of which to be found
+ * @returns {Number} Greatest Common Divisor
+ * @example
+ * calculateGCD([36, 9]); // => 4
+ */
+const calculateGCD = (values) => {
+  const [left, right] = values;
+  let divisor = left > right ? left : right;
+
+  while (left % divisor !== 0 || right % divisor !== 0) {
     divisor -= 1;
   }
+
   return divisor;
 };
 
-export const condition = 'Find the greatest common divisor of given numbers.';
+export default () => {
+  const values = generateTwoRandomValues(100);
+  const question = buildExpression(values);
+  const answer = calculateGCD(values);
+
+  return {
+    question,
+    answer,
+  };
+};

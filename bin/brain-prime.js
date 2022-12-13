@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import startGame from '../src/index.js';
-import generateRandomNumber from '../src/random.js';
-import { sayIsPrime, condition } from '../games/prime.js';
+import run from '../src/index.js';
+import game from '../games/prime.js';
+import questions from '../games/conditions.js';
 
-startGame(generateRandomNumber, sayIsPrime, condition);
+run(game, questions.prime);

@@ -1,24 +1,29 @@
 import readlineSync from 'readline-sync';
 import sayGreetings from './cli.js';
-import { stringifyValue } from './utils.js';
+import { stringify } from './utils.js';
 
 /**
- * @description common logic for games
+ * @description Main logic for game
+ * @param {Object} game Data for the game { question, answer }
+ * @param {String} condition Condition for the game
  */
-export default (generateQuestion, getCorrectAnswer, condition) => {
+export default (game, condition) => {
   const playerName = sayGreetings();
-  console.log(`${condition}`);
+  console.log(condition);
+
   for (let i = 0; i < 3; i += 1) {
-    const currentQuestion = generateQuestion();
-    const currentUserAnswer = readlineSync.question(`Question: ${currentQuestion}\nYour answer: `).toLowerCase().toString();
-    const correctAnswer = stringifyValue(getCorrectAnswer(currentQuestion));
-    if (correctAnswer === currentUserAnswer) {
-      console.log('Correct!');
+    const { question, answer } = game();
+    const userAnswer = readlineSync
+      .question(`Question: ${question}\nYour answer: `)
+      .toLowerCase();
+
+    if (userAnswer === answer) {
+      console.log('Correct');
     } else {
-      console.log(`'${currentUserAnswer}' is wrong answer ;(. Correct answer was '${getCorrectAnswer(currentQuestion)}')`);
-      console.log(`Let's try again, ${playerName}!`);
+      console.log(`${userAnswer} is wrong answer. Correct answer was ${answer}`);
+      console.log(`Let's try again, ${playerName}`);
       return;
     }
   }
-  console.log(`Congratulations, ${playerName}!`);
+  console.log(`Congratulations, ${playerName}`);
 };

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import startGame from '../src/index.js';
-import { getNumbers, gcd, condition } from '../games/gcd.js';
+import run from '../src/index.js';
+import game from '../games/gcd.js';
+import questions from '../games/conditions.js';
 
-startGame(getNumbers, gcd, condition);
+run(game, questions.gcd);

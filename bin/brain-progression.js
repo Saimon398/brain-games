@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { generateProgression, searchMissingNumber, condition } from '../games/progression.js';
-import startGame from '../src/index.js';
+import run from '../src/index.js';
+import game from '../games/progression.js';
+import questions from '../games/conditions.js';
 
-startGame(generateProgression, searchMissingNumber, condition);
+run(game, questions.progression);

@@ -1,57 +1,60 @@
 import { generateRandomNumber } from '../src/utils.js';
 
-/**
- * @description generate math operator randomly ('+', '-', '*')
- * @returns {String} math operator
- */
-const generateMathOperator = () => {
-  const sign = generateRandomNumber();
-  let operation;
-  if (sign < 33) {
-    operation = '+';
-  } else if (sign > 33 && sign < 66) {
-    operation = '-';
-  } else {
-    operation = '*';
-  }
-  return operation;
+const MATH_OPERATIONS = {
+  '+': (num1, num2) => Number(num1) + Number(num2),
+  '-': (num1, num2) => num1 - num2,
+  '*': (num1, num2) => num1 * num2,
 };
 
 /**
- * @description generate random math expression
- * @returns {String} math expression
+ * @description Returns math operator +/-/* by random
+ * @returns {String} Random math operator
+ * @example
+ * getMathOperator(); // => '+'
+ * getMathOperator(); // => '*'
  */
-export const getMathExpression = () => {
-  const operator = generateMathOperator();
-  const firstOperand = generateRandomNumber();
-  const secondOperand = generateRandomNumber();
-  return `${firstOperand} ${operator} ${secondOperand}`;
+const getMathOperator = () => {
+  const operators = Object.keys(MATH_OPERATIONS);
+  const index = generateRandomNumber(operators.length);
+  return operators[index];
 };
 
 /**
- * @description find result of expression according to the math operation
- * @param {String} operation math operation
- * @param {Number} firstOperand first operand
- * @param {Number} secondOperand second operand
- * @returns {Number} operation result
+ * @description Returns random math expression
+ * @param {Number} maxValue Max value that the operand can take
+ * @returns {String} Math expression
+ * @example
+ * getMathExpression(50); // => 34 + 21
+ * getMathExpression(10); // => 5 * 2
  */
-export const calcExpression = (expression) => {
-  const [firstOperand, operator, secondOperand] = expression.split(' ');
-  let result;
-  switch (operator) {
-    case '+':
-      result = Number(firstOperand) + Number(secondOperand);
-      break;
-    case '-':
-      result = firstOperand - secondOperand;
-      break;
-    case '*':
-      result = firstOperand * secondOperand;
-      break;
-    default:
-      throw new Error('There is no such type of math operation!');
-  }
-  return result;
+const buildMathExpression = (maxValue) => {
+  const operator = getMathOperator();
+  const leftValue = generateRandomNumber(maxValue);
+  const rightValue = generateRandomNumber(maxValue);
+  const expression = `${leftValue} ${operator} ${rightValue}`;
+  return expression;
 };
 
-export const condition = 'What is the result of the expression?.';
+/**
+ * @description Return result of math expression
+ * @param {String} expression Expression to be calculated
+ * @returns {Number}
+ * @example
+ * calcExpression('10 - 4'); // => 6
+ * calcExpression('50 + 25'); // => 75
+ */
+const calcExpression = (expression) => {
+  const [leftValue, operator, rightValue] = expression.split(' ');
+  const calculate = MATH_OPERATIONS[operator];
+  return calculate(leftValue, rightValue);
+};
+
+export default () => {
+  const question = buildMathExpression(100);
+  const answer = calcExpression(question);
+
+  return {
+    question,
+    answer,
+  };
+};

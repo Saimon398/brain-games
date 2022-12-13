@@ -1,13 +1,20 @@
+import { generateRandomNumber } from '../src/utils.js';
+
 /**
- * @description defines if the number is prime
- * @param {Number} number number to be defined
+ * @description Check if the number is prime
+ * @param {Number} value Value to be checked
  * @returns {Boolean}
+ * @example
+ * isPrime(7); // => true
+ * isPrime(10); // => false
  */
-export const isPrime = (number) => {
+const isPrime = (value) => {
   let divisor = 2;
+  const limit = Math.sqrt(Math.abs(value));
   let flag = number !== 1;
-  while (divisor <= Math.sqrt(Math.abs(number))) {
-    if (number % divisor === 0) {
+
+  while (divisor <= limit) {
+    if (value % divisor === 0) {
       flag = false;
       break;
     }
@@ -16,6 +23,22 @@ export const isPrime = (number) => {
   return flag;
 };
 
-export const sayIsPrime = (number) => (isPrime(number) ? 'yes' : 'no');
+/**
+ * @description Says if the value is prime
+ * @param {Number} value
+ * @returns {String}
+ * @example
+ * isPrime(7); // => "yes"
+ * isPrime(10); // => "no"
+ */
+const sayIsPrime = (value) => (isPrime(value) ? 'yes' : 'no');
 
-export const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+export default () => {
+  const question = generateRandomNumber(100);
+  const answer = sayIsPrime(question);
+
+  return {
+    question,
+    answer,
+  };
+};

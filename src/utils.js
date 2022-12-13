@@ -1,12 +1,27 @@
 /**
-* @description generates random number from 0 to 100
-* @returns {Number} generated number
+* @description Returns random value from 0 to limit
+* @param {Number} limit The possible highest random value
+* @returns {Number} Generated random value
+* @example
+* const randomNum1 = generateRandomNumber(); // => 42
+* const randomNum2 = generateRandomNumber(); // => 35
 */
-export const generateRandomNumber = () => Math.round(Math.random() * 100);
+const generateRandomNumber = (limit) => Math.round(Math.random() * limit);
 
 /**
- * @description stringifies number or boolean
- * @param {any} value value to be stringified
+ * @description Returns stringified value
+ * @param {String | Number | Boolean} value Value to be stringified
  * @returns {String}
+ * @example
+ * const value1 = 42;
+ * const str1 = stringify(value1); // => "42"
+ *
+ * const value2 = true;
+ * const str2 = stringify(value2); // => "true"
  */
-export const stringifyValue = (value) => value.toString();
+const stringify = (value) => value.toString();
+
+export {
+  generateRandomNumber,
+  stringify,
+};

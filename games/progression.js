@@ -1,50 +1,39 @@
 import { generateRandomNumber } from '../src/utils.js';
 
 /**
- * @description generate arithmetical progression with one missing item
- * @returns {String} arithmetical progression
+ * @description Returns data: progression and missing item
+ * @returns {Object} { progression, missingItem }
+ * @example
+ * generateProgressionData();
+ * {
+ *    progression: "5 10 15 20 25 30 .. 40 45 50",
+ *    missingItem: 35,
+ * }
  */
-export const generateProgression = () => {
-  const step = generateRandomNumber() % 10;
+const generateProgressionData = () => {
+  const step = generateRandomNumber(100) % 10;
+  const missingIndex = generateRandomNumber(10);
   const sequence = [];
-  const indexOfMissingNumber = generateRandomNumber() % 10;
-  let start = generateRandomNumber() % 10;
-  let sequenceLength = 9;
-  while (sequenceLength >= 0) {
-    if (indexOfMissingNumber === sequenceLength) {
-      sequence.push('..');
-    } else {
-      sequence.push(start);
-    }
-    start += step;
-    sequenceLength -= 1;
+  let count = 0;
+  let index = 0;
+
+  while (count < 10) {
+    index += step;
+    const value = count === missingIndex ? '..' : index;
+    sequence.push(value);
+    count += 1;
   }
-  return sequence.join(' ');
+
+  const progression = sequence.join(' ');
+  const missingItem = (missingIndex + 1) * step;
+
+  return { progression, missingItem };
 };
 
-/**
- * @description searches missing number in progression
- * @param {String} progression arithmetical progression
- * @returns {Number} missing number
- */
-export const searchMissingNumber = (progression) => {
-  const splitedProgression = progression.split(' ');
-  let missingItem;
-  for (let i = 0; i < splitedProgression.length; i += 1) {
-    if (splitedProgression[i] === '..' && (i !== 0 && i !== 9)) {
-      missingItem = (Number(splitedProgression[i - 1]) + Number(splitedProgression[i + 1])) / 2;
-      break;
-    } else if (splitedProgression[i] === '..' && i === 0) {
-      missingItem = splitedProgression[i + 1]
-      - (splitedProgression[i + 2] - splitedProgression[i + 1]);
-      break;
-    } else if (splitedProgression[i] === '..' && i === 9) {
-      missingItem = Number(splitedProgression[i - 1])
-      + Number((splitedProgression[i - 1] - splitedProgression[i - 2]));
-      break;
-    }
-  }
-  return missingItem;
+export default () => {
+  const { progression, missingItem } = generateProgressionData();
+  return {
+    question: progression,
+    answer: missingItem,
+  };
 };
-
-export const condition = 'What number is missing in the progression?';
